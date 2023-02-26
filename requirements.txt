@@ -1,5 +1,6 @@
 torch
 numpy
+uvicorn
 fastapi
 pytest
 mangum
