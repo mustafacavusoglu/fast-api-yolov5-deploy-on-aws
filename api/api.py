@@ -12,12 +12,12 @@ templates = Jinja2Templates(directory="templates")
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
 
 @app.get("/")
-async def index():
+def index():
     return {"message": "Hello YOLO World"}
 
 
 @app.post("/predict")
-async def predict(file: bytes = File(...)):
+def predict(file: bytes = File(...)):
     npimg = np.fromstring(file, np.uint8)
     img = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
     results = model(img)
