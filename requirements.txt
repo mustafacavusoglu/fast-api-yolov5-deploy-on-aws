@@ -1,6 +1,5 @@
 torch
 numpy
 fastapi
-"uvicorn[standard]"
 pytest
 mangum
